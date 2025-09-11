@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+nav{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid white;
+    color: white;
+    padding: 20px 20px;
+}
+/* Icons are designed here */
+#icon{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    transition-duration: 400ms;
+}
+#icon:hover{
+    background-color: rgba(255, 255, 255, 0.275);
+}
+
+/* The Project name is designed here */
+nav div span{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    word-spacing: 10px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+/* The button are designed here */
+#button{
+    height: fit-content;
+    width: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn{
+    height: 5vh;
+    width: 10vh;
+    border: none;
+    border-radius: 10%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    background-color: white;
+}
+.btn:hover{
+    background-color: rgba(255, 255, 255, 0.748);
+}
