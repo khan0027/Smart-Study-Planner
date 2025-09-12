@@ -5,8 +5,9 @@
 }
 body{
     background-color: black;
+    position: relative;
 }
-nav{
+#top_nav{
     display: flex;
     height: 10vh;
     justify-content: space-between;
@@ -31,7 +32,7 @@ nav{
 }
 
 /* The Project name is designed here */
-nav div span{
+#top_nav div span{
     font-family: 'Times New Roman', Times, serif;
     font-size: x-large;
     word-spacing: 10px;
@@ -58,4 +59,8 @@ nav div span{
 }
 .btn:hover{
     background-color: rgba(255, 255, 255, 0.748);
+}
+/* sidebar styling */
+#sidebar{
+    position: absolute;
 }
