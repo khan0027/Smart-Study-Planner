@@ -5,17 +5,25 @@
 }
 body{
     background-color: black;
-    position: relative;
 }
-#top_nav{
-    display: flex;
-    height: 10vh;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    border-bottom: 1px solid white;
-    color: white;
-    padding: 20px 20px;
+/* Top nav default visible */
+#top_nav {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 20px 20px;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+#top_nav.hide {
+  visibility: hidden;
+  opacity: 0;
 }
 /* Icons are designed here */
 #icon{
@@ -61,6 +69,64 @@ body{
     background-color: rgba(255, 255, 255, 0.748);
 }
 /* sidebar styling */
-#sidebar{
-    position: absolute;
+.container{
+    position: relative;
+    height: 100vh;
+}
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px;  /* hide it outside screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 250px;
+  background-color: rgb(72, 72, 72);
+  transition: left 0.3s ease-in-out;
+  visibility: hidden;
+}
+#icon2{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    height: 40px;
+    margin-left: 54px;
+    margin-top: 16px;
+    transition-duration: 400ms;
+}
+#icon2:hover{
+    background-color: rgba(255, 255, 255, 0.275);
+}
+#sidebar ul{
+    gap: 50px;
+    list-style: none;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+#sidebar ul li{
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+}
+#sidebar ul li:hover{
+    background-color: rgba(255, 255, 255, 0.378);
+}
+#sidebar ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#sidebar.show {
+  left: 0;
+  visibility: visible;
+}
+.show {
+  visibility: visible !important;
 }
