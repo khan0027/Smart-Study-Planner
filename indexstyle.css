@@ -1,12 +1,15 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: black;
+
+body {
+  background-color: black;
 }
-/* Top nav default visible */
+
+/* ---------------- Top Navbar ---------------- */
 #top_nav {
   display: flex;
   height: 10vh;
@@ -15,118 +18,133 @@ body{
   position: relative;
   border-bottom: 1px solid white;
   color: white;
-  padding: 20px 20px;
+  padding: 20px;
   z-index: 1;
   transition: opacity 0.3s ease-in-out;
   visibility: visible;
   opacity: 1;
 }
+
 #top_nav.hide {
   visibility: hidden;
   opacity: 0;
 }
-/* Icons are designed here */
-#icon{
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    transition-duration: 400ms;
-}
-#icon:hover{
-    background-color: rgba(255, 255, 255, 0.275);
+
+/* Hamburger icon in top navbar */
+#icon {
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  transition: background-color 0.3s;
 }
 
-/* The Project name is designed here */
-#top_nav div span{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-    word-spacing: 10px;
-    font-weight: 500;
-    letter-spacing: 3px;
+#icon:hover {
+  background-color: rgba(255, 255, 255, 0.275);
 }
 
-/* The button are designed here */
-#button{
-    height: fit-content;
-    width: 30vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* Project name */
+#top_nav div span {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  word-spacing: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
-.btn{
-    height: 5vh;
-    width: 10vh;
-    border: none;
-    border-radius: 10%;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: medium;
-    background-color: white;
+
+/* Buttons */
+#button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vh;
 }
-.btn:hover{
-    background-color: rgba(255, 255, 255, 0.748);
+
+.btn {
+  height: 5vh;
+  width: 10vh;
+  border: none;
+  border-radius: 10%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  background-color: white;
+  cursor: pointer;
 }
-/* sidebar styling */
-.container{
-    position: relative;
-    height: 100vh;
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.75);
 }
+
+/* ---------------- Sidebar ---------------- */
+.container {
+  position: relative;
+  height: 100vh;
+}
+
 #sidebar {
   position: absolute;
   top: 0;
-  left: -250px;  /* hide it outside screen */
+  left: -250px; /* hidden by default */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100vh;
   width: 250px;
-  background-color: rgb(72, 72, 72);
+  background-color: rgb(255, 255, 255);
   transition: left 0.3s ease-in-out;
   visibility: hidden;
 }
-#icon2{
-    display: flex;
-    width: 100%;
-    justify-content: start;
-    align-items: center;
-    height: 40px;
-    margin-left: 54px;
-    margin-top: 16px;
-    transition-duration: 400ms;
-}
-#icon2:hover{
-    background-color: rgba(255, 255, 255, 0.275);
-}
-#sidebar ul{
-    gap: 50px;
-    list-style: none;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-#sidebar ul li{
-    display: flex;
-    justify-content: center;
-    height: 10vh;
-    width: 100%;
-}
-#sidebar ul li:hover{
-    background-color: rgba(255, 255, 255, 0.378);
-}
-#sidebar ul li a{
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 #sidebar.show {
-  left: 0;
+  left: 0;           /* slide in */
   visibility: visible;
 }
-.show {
-  visibility: visible !important;
+
+/* Sidebar hamburger */
+#icon2 {
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  border-radius: 100%;
+  align-items: center;
+  height: 40px;
+  margin-left: -154px;
+  margin-top: 16px;
+  transition: background-color 0.3s;
+}
+
+#icon2:hover {
+  background-color: rgba(0, 0, 0, 0.275);
+}
+
+/* Sidebar menu */
+#sidebar ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0;
+}
+
+#sidebar ul li {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  width: 100%;
+}
+
+#sidebar ul li:hover {
+  background-color: rgba(255, 255, 255, 0.378);
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
