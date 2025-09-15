@@ -1,0 +1,239 @@
+body {
+  background-color: #0c1811;
+}
+
+/* ---------------- Top Navbar ---------------- */
+#top_nav {
+  display: flex;
+  height: 6vh;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 20px;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+#top_nav.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Hamburger icon in top navbar */
+#icon {
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  transition: background-color 0.3s;
+}
+
+#icon:hover {
+  background-color: #e0d0b968;
+}
+
+/* Project name */
+#top_nav div span {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  word-spacing: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+/* Buttons */
+#button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vh;
+}
+
+.btn {
+  height: 5vh;
+  width: 10vh;
+  border: none;
+  border-radius: 10%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  background-color: #E0D0B9;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------------- Sidebar ---------------- */
+.container {
+  position: relative;
+  height: 100vh;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px; /* hidden by default */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 250px;
+  background-color: #E0D0B9;
+  transition: left 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+#sidebar.show {
+  left: 0;           /* slide in */
+  visibility: visible;
+}
+
+/* Sidebar hamburger */
+#icon2 {
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  border-radius: 100%;
+  align-items: center;
+  height: 40px;
+  margin-left: -154px;
+  margin-top: 16px;
+  transition: background-color 0.3s;
+}
+
+#icon2:hover {
+  background-color: rgba(0, 0, 0, 0.275);
+}
+
+/* Sidebar menu */
+#sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  width: 35vh;
+  
+}
+
+#sidebar ul li {
+  display: flex;
+  justify-content: center;
+  height: 7vh;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  letter-spacing: 1px;
+}
+
+
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vh;
+}
+#sidebar ul li a:hover {
+  width: 100%;
+  transition-duration: 600ms;
+  color: white;
+  background-color: #0c1811;
+}
+#button2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5vh;
+  border-top: 1px solid #0c1811;
+  padding-top: 40px;
+  
+}
+
+#login_btn{
+  height: 5vh;
+  width: 10vh;
+  border: 1px solid #0c1811;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+#login_btn:hover{
+  color: #E0D0B9;
+  background-color: #0c1811;
+  border: none;
+  transition: all;
+  transition-duration: 400ms;
+}
+#signup_btn{
+  height: 5vh;
+  width: 10vh;
+  border-radius: 5px;
+  border: none;
+  background-color: #0c1811;
+  color: #E0D0B9;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+#signup_btn:hover{
+  border: 1px solid #0c1811;
+  background-color: transparent;
+  color: #0c1811;
+  transition: all;
+  transition-duration: 400ms;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+}
+main form{
+    color: #E0D0B9;
+    width: 60vh;
+    border: 1px solid #E0D0B9;
+    padding: 6vh;
+    border-radius: 10px;
+
+}
+main form label{
+    margin-left: 20px;
+}
+main form input{
+    height: 5.5vh;
+    width: 90%;
+    border-radius: 20px;
+    padding-left: 7%;
+    margin-top: 8px;
+}
+main form button{
+    margin-left: 17vh;
+    height: 5.5vh;
+    width: 40%;
+    background-color: #0c1811;
+    border: 1px solid #E0D0B9;
+    color: #E0D0B9;
+    border-radius: 10px;
+}
+main form button:hover{
+    background-color: #E0D0B9;
+    border-radius: 10px;
+    color: #0c1811;
+    transition-duration: 400ms;
+}

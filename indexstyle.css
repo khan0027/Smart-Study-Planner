@@ -42,11 +42,9 @@ body {
 }
 
 #icon:hover {
-  background-color: #E0D0B9;
+  background-color: #e0d0b968;
 }
-nav div svg g:hover{
-  fill: black;
-}
+
 /* Project name */
 #top_nav div span {
   font-family: 'Times New Roman', Times, serif;
@@ -78,7 +76,10 @@ nav div svg g:hover{
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.75);
 }
-
+nav div button a{
+  text-decoration: none;
+  color: #0c1811;
+}
 /* ---------------- Sidebar ---------------- */
 .container {
   position: relative;
@@ -136,8 +137,10 @@ nav div svg g:hover{
 #sidebar ul li {
   display: flex;
   justify-content: center;
-  height: 10vh;
-  
+  height: 7vh;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  letter-spacing: 1px;
 }
 
 
@@ -148,11 +151,102 @@ nav div svg g:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5vh;
+  border-radius: 1vh;
 }
 #sidebar ul li a:hover {
   width: 100%;
   transition-duration: 600ms;
   color: white;
   background-color: #0c1811;
+}
+#button2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5vh;
+  border-top: 1px solid #0c1811;
+  padding-top: 40px;
+  
+}
+
+#login_btn{
+  height: 5vh;
+  width: 10vh;
+  border: 1px solid #0c1811;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+#login_btn:hover{
+  color: #E0D0B9;
+  background-color: #0c1811;
+  border: none;
+  transition: all;
+  transition-duration: 400ms;
+}
+#signup_btn{
+  height: 5vh;
+  width: 10vh;
+  border-radius: 5px;
+  border: none;
+  background-color: #0c1811;
+  color: #E0D0B9;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+}
+#signup_btn:hover{
+  border: 1px solid #0c1811;
+  background-color: transparent;
+  color: #0c1811;
+  transition: all;
+  transition-duration: 400ms;
+}
+
+/* Designing main  */
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15vh;
+}
+@keyframes typewriter{
+  from{
+    width: 0%;
+  }
+  to{
+    width: 60%;
+  }
+}
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
+}
+#main_text{
+  color: #E0D0B9;
+  width: 50%;
+}
+main div span{
+  color: white;
+}
+main div h3{
+  color: red;
+  animation: ease-in-out;
+}
+main div p{
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 1px solid #E0D0B9;
+  animation: typewriter 4s steps(30,end) forwards,blink 0.7s step-end 3;
+  transition-duration: 300ms;
+}
+main div img{
+  height: 60vh;
+  width: 60vh;
 }
