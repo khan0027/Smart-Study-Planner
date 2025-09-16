@@ -1,252 +1,137 @@
-/* Reset */
-* {
-  margin: 0;
+*{
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-
-body {
-  background-color: #0c1811;
+:root{
+    --bg-dark: hsl(0,0%,0%);
+    --bg: hsl(0,0%,5%);
+    --bg-light: hsl(0,0%,10%);
+    --text: hsl(0,0%,95%);
+    --text-muted: hsl(0,0%,70%);
+    --border: hsl(0,0%,30%);
+}
+body.light{
+    --bg-dark: hsl(0,0%,90%);
+    --bg: hsl(0,0%,95%);
+    --bg-light: hsl(0,0%,100%);
+    --text: hsl(0,0%,5%);
+    --text-muted: hsl(0,0%,30%);
+    --border: hsl(0,0%,70%);
+}
+body{
+  background: var(--bg-dark);
 }
 
-/* ---------------- Top Navbar ---------------- */
-#top_nav {
+#topnav{
   display: flex;
-  height: 10vh;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  border-bottom: 1px solid white;
-  color: white;
-  padding: 20px;
-  z-index: 1;
-  transition: opacity 0.3s ease-in-out;
-  visibility: visible;
-  opacity: 1;
-}
-
-#top_nav.hide {
-  visibility: hidden;
-  opacity: 0;
-}
-
-/* Hamburger icon in top navbar */
-#icon {
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 40px;
-  transition: background-color 0.3s;
-}
-
-#icon:hover {
-  background-color: #e0d0b968;
-}
-
-/* Project name */
-#top_nav div span {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: x-large;
-  word-spacing: 10px;
-  font-weight: 500;
-  letter-spacing: 3px;
-}
-
-/* Buttons */
-#button {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 30vh;
-}
-
-.btn {
-  height: 5vh;
-  width: 10vh;
-  border: none;
-  border-radius: 10%;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: medium;
-  background-color: #E0D0B9;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: rgba(255, 255, 255, 0.75);
-}
-nav div button a{
-  text-decoration: none;
-  color: #0c1811;
-}
-/* ---------------- Sidebar ---------------- */
-.container {
-  position: relative;
-  height: 100vh;
-}
-
-#sidebar {
-  position: absolute;
-  top: 0;
-  left: -250px; /* hidden by default */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-  width: 250px;
-  background-color: #E0D0B9;
-  transition: left 0.3s ease-in-out;
-  visibility: hidden;
-}
-
-#sidebar.show {
-  left: 0;           /* slide in */
-  visibility: visible;
-}
-
-/* Sidebar hamburger */
-#icon2 {
-  display: flex;
-  width: 40px;
-  justify-content: center;
-  border-radius: 100%;
-  align-items: center;
-  height: 40px;
-  margin-left: -154px;
-  margin-top: 16px;
-  transition: background-color 0.3s;
-}
-
-#icon2:hover {
-  background-color: rgba(0, 0, 0, 0.275);
-}
-
-/* Sidebar menu */
-#sidebar ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0;
-  width: 35vh;
-  
-}
-
-#sidebar ul li {
-  display: flex;
-  justify-content: center;
-  height: 7vh;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: large;
-  letter-spacing: 1px;
-}
-
-
-
-#sidebar ul li a {
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1vh;
-}
-#sidebar ul li a:hover {
+  flex: 1 1 auto;
   width: 100%;
-  transition-duration: 600ms;
-  color: white;
-  background-color: #0c1811;
+  padding: 10px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
 }
-#button2 {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 5vh;
-  border-top: 1px solid #0c1811;
-  padding-top: 40px;
-  
-}
-
-#login_btn{
-  height: 5vh;
-  width: 10vh;
-  border: 1px solid #0c1811;
-  border-radius: 5px;
-  background-color: transparent;
-  cursor: pointer;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: medium;
-}
-#login_btn:hover{
-  color: #E0D0B9;
-  background-color: #0c1811;
-  border: none;
-  transition: all;
-  transition-duration: 400ms;
-}
-#signup_btn{
-  height: 5vh;
-  width: 10vh;
-  border-radius: 5px;
-  border: none;
-  background-color: #0c1811;
-  color: #E0D0B9;
-  cursor: pointer;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: medium;
-}
-#signup_btn:hover{
-  border: 1px solid #0c1811;
-  background-color: transparent;
-  color: #0c1811;
-  transition: all;
-  transition-duration: 400ms;
-}
-
-/* Designing main  */
-main{
+/* Logo is designed here */
+#logo{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  margin-top: 15vh;
 }
-@keyframes typewriter{
-  from{
-    width: 0%;
-  }
-  to{
-    width: 60%;
-  }
+#logo h2{
+  width: 100%;
 }
-@keyframes blink{
-  50%{
-    border-color: transparent;
-  }
+
+
+/* menu is designed here */
+#menu{
+
+
 }
-#main_text{
-  color: #E0D0B9;
-  width: 50%;
+#menu ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  flex: 1 1 auto; 
 }
-main div span{
-  color: white;
+#menu ul li a{
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: var(--bg-light);
+  padding: 10px;
+  border-radius: 5px;
 }
-main div h3{
-  color: red;
-  animation: ease-in-out;
+#menu ul li a:hover{
+  background: var(--border);
+  transition-duration: 400ms;
 }
-main div p{
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  border-right: 1px solid #E0D0B9;
-  animation: typewriter 4s steps(30,end) forwards,blink 0.7s step-end 3;
-  transition-duration: 300ms;
+
+
+/* toggle */
+#theme_toggle{
+  height: 5vh;
+  width: 15vh;
+  background: var(--bg);
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-left: 7px;
+  padding-right: 2px;
+  gap: 10px;
 }
-main div img{
-  height: 60vh;
-  width: 60vh;
+#slide_toggle{
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  background: var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slide_toggle img{
+  height: 17px;
+  width: 17px;
+}
+#theme_toggle span{
+  font-size: 10px;
+}
+/* Button design is here */
+#buttons a{
+  text-decoration: none;
+}
+#login_btn{
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+}
+#signup_btn:hover{
+  background: var(--border);
+}
+#signup_btn{
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+}
+
+
+
+
+  /* sidebar styling */
+#sidebar{
+  visibility: hidden;
 }
