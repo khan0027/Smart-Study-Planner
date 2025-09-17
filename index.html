@@ -3,133 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="indexstyle.css" />
+  <title>Home - Study Planner</title>
+  <link rel="stylesheet" href="indexstyle.css">
 </head>
-<body id="container" >
-    <nav id="topnav" >
-      <div id="hamberger" >
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
-  <path id="hamberger1" fill="white" d="M 5.5 9 A 1.50015 1.50015 0 1 0 5.5 12 L 42.5 12 A 1.50015 1.50015 0 1 0 42.5 9 L 5.5 9 z M 5.5 22.5 A 1.50015 1.50015 0 1 0 5.5 25.5 L 42.5 25.5 A 1.50015 1.50015 0 1 0 42.5 22.5 L 5.5 22.5 z M 5.5 36 A 1.50015 1.50015 0 1 0 5.5 39 L 42.5 39 A 1.50015 1.50015 0 1 0 42.5 36 L 5.5 36 z"/>
-</svg>
+<body id="container">
+  <!-- TOP NAV -->
+  <nav id="topnav">
+    <div id="hamberger" onclick="openSidebar()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+        <path id="hamberger1" fill="white"
+          d="M 5.5 9 A 1.5 1.5 0 1 0 5.5 12 L 42.5 12 A 1.5 1.5 0 1 0 42.5 9 L 5.5 9 z 
+             M 5.5 22.5 A 1.5 1.5 0 1 0 5.5 25.5 L 42.5 25.5 A 1.5 1.5 0 1 0 42.5 22.5 L 5.5 22.5 z 
+             M 5.5 36 A 1.5 1.5 0 1 0 5.5 39 L 42.5 39 A 1.5 1.5 0 1 0 42.5 36 L 5.5 36 z"/>
+      </svg>
+    </div>
+    <div id="logo">
+      <h2>STUDY PLANNER</h2>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Reminders</a></li>
+        <li><a href="#">Progress</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div id="theme_toggle">
+      <div id="slide_toggle" onclick="toggleTheme()">
+        <img id="light_img" src="light_mode_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Light mode">
+        <img id="dark_img" src="dark_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Dark mode">
+      </div>
+      <span id="light_span">Light Mode</span>
+      <span id="dark_span">Dark Mode</span>
+    </div>
+    <div id="buttons">
+      <a href="login.html">
+        <button id="login_btn">Login</button>
+      </a>
+      <a href="signup.html">
+        <button id="signup_btn">Signup</button>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <div id="sidenav_hamberger" onclick="closeSidebar()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+        <path fill="white"
+          d="M 5.5 9 A 1.5 1.5 0 1 0 5.5 12 L 42.5 12 A 1.5 1.5 0 1 0 42.5 9 L 5.5 9 z 
+             M 5.5 22.5 A 1.5 1.5 0 1 0 5.5 25.5 L 42.5 25.5 A 1.5 1.5 0 1 0 42.5 22.5 L 5.5 22.5 z 
+             M 5.5 36 A 1.5 1.5 0 1 0 5.5 39 L 42.5 39 A 1.5 1.5 0 1 0 42.5 36 L 5.5 36 z"/>
+      </svg>
+      <h3>Study Planner</h3>
+    </div>
+    <div id="side_menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Reminders</a></li>
+        <li><a href="#">Progress</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div id="side_buttons">
+      <a href="login.html">
+        <button id="side_login_btn">Login</button>
+      </a>
+      <a href="signup.html">
+        <button id="side_signup_btn">Signup</button>
+      </a>
+    </div>
+  </nav>
 
-      </div>
-      <div id="logo" >
-        <h2>STUDY PLANNER</h2>
-      </div>
-      <div id="menu" >
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="">Tasks</a></li>
-          <li><a href="">Calender</a></li>
-          <li><a href="">Reminders</a></li>
-          <li><a href="">Progress</a></li>
-          <li><a href="">About</a></li>
-        </ul>
-      </div>
-      <div id="theme_toggle"  >
-        <div id="slide_toggle"  onclick="toggle()" >
-          <img id="light_img" src="light_mode_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="lightimage">
-          <img id="dark_img" src="dark_mode_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="dark_img">
-        </div>
-        <span id="light_span" >
-          Light Mode
-        </span>
-        
-        <span id="dark_span" >
-          Dark Mode
-        </span>
-        
-      </div>
-      <div id="buttons" >
-        <a href="login.html">
-          <button id="login_btn" >Login</button>
-        </a>
-        <a href="signup.html">
-          <button id="signup_btn" >Signup</button>
-        </a>
-      </div>
-    </nav>
-    <nav id="sidebar" >
-      <div id="sidenav_hamberger" >
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
-          <path fill="white" d="M 5.5 9 A 1.50015 1.50015 0 1 0 5.5 12 L 42.5 12 A 1.50015 1.50015 0 1 0 42.5 9 L 5.5 9 z M 5.5 22.5 A 1.50015 1.50015 0 1 0 5.5 25.5 L 42.5 25.5 A 1.50015 1.50015 0 1 0 42.5 22.5 L 5.5 22.5 z M 5.5 36 A 1.50015 1.50015 0 1 0 5.5 39 L 42.5 39 A 1.50015 1.50015 0 1 0 42.5 36 L 5.5 36 z"/>
-        </svg>
-        <h3>Study Planner</h3>
-      </div>
-      <div id="side_menu" >
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="">Tasks</a></li>
-          <li><a href="">Calender</a></li>
-          <li><a href="">Reminders</a></li>
-          <li><a href="">Progress</a></li>
-          <li><a href="">About</a></li>
-        </ul>
-      </div>
-      <div id="theme_toggle" >
-        <div id="slide_toggle" >
+  <!-- MAIN CONTENT -->
+  <main id="content">
+    <div id="text">
+      <h1>
+        Welcome to <span id="span_1">Smart Study Planner</span>
+      </h1>
+      <p>
+        This website helps users track their study timing and provides a personal dashboard to monitor progress
+      </p>
+      <span id="span_2">Login/Sign-up to continue</span>
+    </div>
+    <div id="study_image">
+      <img id="main_img" src="studyImage.png" alt="Study illustration">
+    </div>
+  </main>
 
-        </div>
-      </div>
-      <div id="buttons" >
-        <a href="login.html">
-          <button>Login</button>
-        </a>
-        <a href="signup.html">
-          <button>Signup</button>
-        </a>
-    </nav>
+  <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const body = document.body;
+      const lightImg = document.getElementById("light_img");
+      const darkImg = document.getElementById("dark_img");
+      const lightSpan = document.getElementById("light_span");
+      const darkSpan = document.getElementById("dark_span");
+      const hamberger = document.getElementById("hamberger1");
 
+      // Toggle theme class
+      body.classList.toggle("light");
 
-    <main id="content" >
-      <div id="text" >
-        <h1>
-          Welcome to <span id="span_1" >Smart Study Planner</span>
-        </h1>
-        <p>
-          This website helps user to track their study timing, 
-          it provides  personal <br> dashboard  to track their progress 
-        </p>
-        <span id="span_2" >
-          Login/Sign-up to continue
-        </span>
-      </div>
-      <div id="study_image" >
-        <img id="main_img" src="studyImage.png" alt="studyimage">
-      </div>
-    </main>
-
-    <script>
-  function toggle() {
-    const body = document.body;
-    const lightImg = document.getElementById("light_img");
-    const darkImg = document.getElementById("dark_img");
-    const lightSpan = document.getElementById("light_span");
-    const darkSpan = document.getElementById("dark_span");
-    const hamberger = document.getElementById("hamberger1");
-
-    // Toggle theme class
-    body.classList.toggle("light");
-
-
-
-    // Toggle visibility of images & spans
-    if (body.classList.contains("light")) {
-      hamberger.style.fill = "black"
-      lightImg.style.display = "none";
-      darkImg.style.display = "inline";
-      lightSpan.style.display = "none";
-      darkSpan.style.display = "inline";
-    } else {
-      hamberger.style.fill = "white"
-      lightImg.style.display = "inline";
-      darkImg.style.display = "none";
-      lightSpan.style.display = "inline";
-      darkSpan.style.display = "none";
+      // Toggle visibility of images & spans
+      if (body.classList.contains("light")) {
+        hamberger.style.fill = "black";
+        lightImg.style.display = "none";
+        darkImg.style.display = "inline";
+        lightSpan.style.display = "none";
+        darkSpan.style.display = "inline";
+      } else {
+        hamberger.style.fill = "white";
+        lightImg.style.display = "inline";
+        darkImg.style.display = "none";
+        lightSpan.style.display = "inline";
+        darkSpan.style.display = "none";
+      }
     }
-  }
-</script>
 
+    // Sidebar functionality
+    function openSidebar() {
+      document.getElementById("sidebar").classList.add("active");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("active");
+    }
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", function(event) {
+      const sidebar = document.getElementById("sidebar");
+      const hamberger = document.getElementById("hamberger");
+      
+      if (sidebar.classList.contains("active") && 
+          !sidebar.contains(event.target) && 
+          !hamberger.contains(event.target)) {
+        closeSidebar();
+      }
+    });
+
+    // Initialize theme based on user preference
+    function initTheme() {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (!prefersDark) {
+        toggleTheme();
+      }
+    }
+
+    // Run initialization when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
 </body>
 </html>
