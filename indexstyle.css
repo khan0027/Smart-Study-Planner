@@ -32,6 +32,7 @@ body{
   flex: 1 1 auto;
   width: 100%;
   padding: 10px;
+  display: none;
   color: var(--text);
   border-bottom: 1px solid var(--border);
 }
@@ -44,16 +45,14 @@ body{
 }
 #logo h2{
   width: 100%;
-  font-size: medium;
-  letter-spacing: 1px;
+  font-size: large;
+  letter-spacing: 2px;
+  font-weight: 700;
 }
 
 
 /* menu is designed here */
-#menu{
 
-
-}
 #menu ul{
   list-style: none;
   display: flex;
@@ -160,11 +159,69 @@ body{
 
   /* sidebar styling */
 #sidebar{
-  visibility: hidden;
+  width: 250px;
+  height: 97vh;
+  border: 1px solid var(--text);
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text);
+  flex: 1 1 auto;
+  z-index: 999;
+  position: relative;
+}
+#sidenav_hamberger{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+#side_menu{
+  width: 100%;
+  padding: 10px;
+  
+}
+#side_menu ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  gap: 10px;
+  
+  
+}
+#side_menu ul li{
+  width: 100%;
+  /* border: 1px solid var(--span-text); */
+  display: flex;
+  justify-content: center;
+  background: var(--bg-light);
+  
+}
+#side_menu ul li a{
+  text-decoration: none;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+}
+#side_menu ul li a:hover{
+  background: var(--border);
 }
 
-/* main design is here */
 
+
+
+/* main design is here */
+#container{
+  position: absolute;
+}
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -186,6 +243,8 @@ body{
   flex: 1 1 auto;
   width: 100%;
   flex-wrap: wrap;
+  display: inline;
+  z-index: 0;
 }
 #text{
   width: 50%;
