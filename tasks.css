@@ -281,7 +281,34 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    gap: 10px;
+}
+#task_form input[type=text]{
+  width: 200px;
+  height: 5vh;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding-left: 10px;
+  background: var(--bg-dark);
+}
+#task_form input[type=number]{
+  width: 40px;
+  height: 5vh;
+  padding-left: 8px;
+  padding-right: 5px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+}
+#task_form input::placeholder{
+  color: var(--text);
+}
+#priority{
+  background: var(--bg-dark);
+  color: var(--text);
+  height: 5vh;
+  width: 200px;
+  padding-left: 10px;
 }
 
 @keyframes bounce {

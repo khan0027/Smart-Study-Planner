@@ -93,18 +93,31 @@
             <img src="stat_minus_1_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="downarrow">
         </div>
         <form id="task_form" action="">
+          <div>
             <label for="taskName">Task Name: </label>
             <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name" >
+          </div>
+          <div>
             <label for="subject">Subject: </label>
             <input type="text" name="subject" id="subject" placeholder="Enter Subject Here" >
+          </div>
+          <div>
             <label for="priority">Priority</label>
             <select name="priority" id="priority">
                 <option value="High">High</option>
                 <option value="Moderate">Moderate</option>
                 <option value="Low">Low</option>
             </select>
+          </div>
+          <div>
             <label for="percentage">Completion Status</label>
-            <input type="number" name="percentage" id="percentage" placeholder="0" max="100" min="0" >
+            <progress id="percentage" value="20" max="100" >20%</progress>
+          </div>
+            
+            
+            
+            
+            <button type="submit">Add Task</button>
         </form>
     </div>
   </main>
