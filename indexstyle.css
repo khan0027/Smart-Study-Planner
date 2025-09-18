@@ -283,6 +283,9 @@ body {
     transform: translateY(-10px);
   }
 }
+/* Main content ends here */
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -327,7 +330,9 @@ body {
   #topnav {
     padding: 10px;
   }
-  
+  #light_span, #dark_span {
+    font-size: 0rem;
+  }
   #logo h2 {
     font-size: 1rem;
   }
@@ -342,7 +347,12 @@ body {
   }
   
   #theme_toggle {
-    width: 90px;
-    gap: 5px;
+    width: 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 0px;
+    padding-left: 3px;
+    margin-right: 4px;
   }
 }

@@ -104,6 +104,7 @@
       const lightSpan = document.getElementById("light_span");
       const darkSpan = document.getElementById("dark_span");
       const hamberger = document.getElementById("hamberger1");
+      const side_hamberger = document.getElementById("sidenav_hamberger");
 
       // Toggle theme class
       body.classList.toggle("light");
@@ -111,12 +112,14 @@
       // Toggle visibility of images & spans
       if (body.classList.contains("light")) {
         hamberger.style.fill = "black";
+        side_hamberger.style.fill = "black";
         lightImg.style.display = "none";
         darkImg.style.display = "inline";
         lightSpan.style.display = "none";
         darkSpan.style.display = "inline";
-      } else {
+      } else {        
         hamberger.style.fill = "white";
+        side_hamberger.style.fill = "white"
         lightImg.style.display = "inline";
         darkImg.style.display = "none";
         lightSpan.style.display = "inline";
