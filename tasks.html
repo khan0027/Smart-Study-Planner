@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Study Planner</title>
-  <link rel="stylesheet" href="indexstyle.css">
+  <link rel="stylesheet" href="tasks.css">
 </head>
 <body id="container">
   <!-- TOP NAV -->
@@ -81,17 +81,31 @@
 
   <!-- MAIN CONTENT -->
   <main id="content">
-    <div id="text">
-      <h1>
-        Welcome to <span id="span_1">Smart Study Planner</span>
-      </h1>
-      <p>
-        This website helps users track their study timing and provides a personal dashboard to monitor progress
-      </p>
-      <span id="span_2">Login/Sign-up to continue</span>
+    <div id="task_desc" >
+        <h1>Here You can add tasks !!</h1>
+        <span id="task_span" >
+            Login/Signup to continue
+        </span>
     </div>
-    <div id="study_image">
-      <img id="main_img" src="studyImage.png" alt="Study illustration">
+    <div id="task_action" >
+        <div id="task_text" >
+            <h3>Add the Tasks here</h3>
+            <img src="stat_minus_1_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="downarrow">
+        </div>
+        <form id="task_form" action="">
+            <label for="taskName">Task Name: </label>
+            <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name" >
+            <label for="subject">Subject: </label>
+            <input type="text" name="subject" id="subject" placeholder="Enter Subject Here" >
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority">
+                <option value="High">High</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Low">Low</option>
+            </select>
+            <label for="percentage">Completion Status</label>
+            <input type="number" name="percentage" id="percentage" placeholder="0" max="100" min="0" >
+        </form>
     </div>
   </main>
 

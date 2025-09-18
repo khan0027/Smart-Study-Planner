@@ -1,0 +1,370 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg-dark: hsl(0, 0%, 0%);
+  --bg: hsl(0, 0%, 5%);
+  --bg-light: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 95%);
+  --text-muted: hsl(0, 0%, 70%);
+  --border: hsl(0, 0%, 30%);
+  --span-text: hsl(0, 100%, 50%);
+}
+
+body.light {
+  --bg-dark: hsl(0, 0%, 90%);
+  --bg: hsl(0, 0%, 95%);
+  --bg-light: hsl(0, 0%, 100%);
+  --text: hsl(0, 0%, 5%);
+  --text-muted: hsl(0, 0%, 30%);
+  --border: hsl(0, 0%, 70%);
+  --span-text: hsl(0, 100%, 50%);
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Top Navigation */
+#topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#hamberger {
+  cursor: pointer;
+  display: none;
+}
+
+/* Logo */
+#logo h2 {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* Menu */
+#menu ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+#menu ul li a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#menu ul li a:hover {
+  background: var(--border);
+}
+
+/* Theme Toggle */
+#theme_toggle {
+  height: 35px;
+  width: 120px;
+  background: var(--bg);
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+#slide_toggle {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background: var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#light_img, #dark_img {
+  height: 17px;
+  width: 17px;
+}
+
+#dark_img {
+  display: none;
+}
+
+#dark_span {
+  display: none;
+}
+
+#light_span, #dark_span {
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+/* Buttons */
+#buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#login_btn, #signup_btn {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#login_btn:hover, #signup_btn:hover {
+  background: var(--border);
+}
+
+/* Sidebar */
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  background: var(--bg-dark);
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  z-index: 2000;
+  border-right: 1px solid var(--border);
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidenav_hamberger {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+#sidenav_hamberger h3 {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+#side_menu {
+  padding: 20px 0;
+}
+
+#side_menu ul {
+  list-style: none;
+}
+
+#side_menu ul li {
+  width: 100%;
+}
+
+#side_menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s;
+}
+
+#side_menu ul li a:hover {
+  background: var(--border);
+}
+
+#side_buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#side_login_btn, #side_signup_btn {
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+#side_login_btn:hover, #side_signup_btn:hover {
+  background: var(--border);
+}
+
+/* Main Content */
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+#task_desc, #task_action{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 15vh;
+    align-items: start;
+}
+#task_span{
+    color: var(--span-text);
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    animation: bounce 2s infinite;
+}
+#task_desc{
+    width: 50%;
+    padding-left: 10%;
+    gap: 20px;
+}
+#task_action{
+    width: 50%;
+    gap: 20px;
+}
+
+#task_action{
+    display: flex;
+    flex-direction: column;
+    
+}
+#task_text{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid var(--border);
+    width: 100%;
+    height: 10vh;
+}
+#task_text:hover{
+    background: var(--border);
+}
+#task_text img{
+    background: var(--span-text);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    animation: bounce 8s infinite;
+    border: 1px solid var(--bg-dark);
+}
+
+#task_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+/* Main content ends here */
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #menu {
+    display: none;
+  }
+  
+  #hamberger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  #theme_toggle {
+    width: 100px;
+  }
+  
+  #light_span, #dark_span {
+    font-size: 0.6rem;
+  }
+  
+  #content {
+    flex-direction: column;
+  }
+  
+  #text, #study_image {
+    min-width: 100%;
+  }
+  
+  #text {
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #study_image {
+    padding: 0 20px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #topnav {
+    padding: 10px;
+  }
+  #light_span, #dark_span {
+    font-size: 0rem;
+  }
+  #logo h2 {
+    font-size: 1rem;
+  }
+  
+  #buttons {
+    gap: 5px;
+  }
+  
+  #login_btn, #signup_btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  #theme_toggle {
+    width: 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 0px;
+    padding-left: 3px;
+    margin-right: 4px;
+  }
+}
