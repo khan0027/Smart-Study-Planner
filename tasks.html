@@ -81,44 +81,44 @@
 
   <!-- MAIN CONTENT -->
   <main id="content">
-    <div id="task_desc" >
+    <div id="task_desc">
         <h1>Here You can add tasks !!</h1>
-        <span id="task_span" >
+        <span id="task_span">
             Login/Signup to continue
         </span>
     </div>
-    <div id="task_action" >
-        <div id="task_text" >
+    <div id="task_action">
+        <div id="task_text" onclick="toggleTaskForm()">
             <h3>Add the Tasks here</h3>
             <img src="stat_minus_1_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="downarrow">
         </div>
-        <form id="task_form" action="">
-          <div>
-            <label for="taskName">Task Name: </label>
-            <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name" >
+        <form id="task_form" onsubmit="addTask(event)">
+          <div class="input">
+            <label for="taskName">Task Name:</label>
+            <input type="text" name="taskName" id="taskName" placeholder="Enter Task Name" required>
           </div>
-          <div>
-            <label for="subject">Subject: </label>
-            <input type="text" name="subject" id="subject" placeholder="Enter Subject Here" >
+          <div class="input">
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject" placeholder="Enter Subject Here" required>
           </div>
-          <div>
-            <label for="priority">Priority</label>
-            <select name="priority" id="priority">
+          <div class="input">
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority" required>
                 <option value="High">High</option>
-                <option value="Moderate">Moderate</option>
+                <option value="Moderate" selected>Moderate</option>
                 <option value="Low">Low</option>
             </select>
           </div>
-          <div>
-            <label for="percentage">Completion Status</label>
-            <progress id="percentage" value="20" max="100" >20%</progress>
+          <div class="input">
+            <label for="percentage">Completion %:</label>
+            <input type="number" name="percentage" id="percentage" max="100" min="0" placeholder="eg:20" required>
           </div>
-            
-            
-            
-            
-            <button type="submit">Add Task</button>
+          <button type="submit" id="task_button">Add Task</button>
         </form>
+    </div>
+    
+    <div id="task_list">
+      <!-- Tasks will be added here dynamically -->
     </div>
   </main>
 
@@ -131,7 +131,7 @@
       const lightSpan = document.getElementById("light_span");
       const darkSpan = document.getElementById("dark_span");
       const hamberger = document.getElementById("hamberger1");
-      const side_hamberger = document.getElementById("sidenav_hamberger");
+      const side_hamberger = document.querySelector("#sidenav_hamberger path");
 
       // Toggle theme class
       body.classList.toggle("light");
@@ -139,14 +139,14 @@
       // Toggle visibility of images & spans
       if (body.classList.contains("light")) {
         hamberger.style.fill = "black";
-        side_hamberger.style.fill = "black";
+        if (side_hamberger) side_hamberger.style.fill = "black";
         lightImg.style.display = "none";
         darkImg.style.display = "inline";
         lightSpan.style.display = "none";
         darkSpan.style.display = "inline";
       } else {        
         hamberger.style.fill = "white";
-        side_hamberger.style.fill = "white"
+        if (side_hamberger) side_hamberger.style.fill = "white";
         lightImg.style.display = "inline";
         darkImg.style.display = "none";
         lightSpan.style.display = "inline";
@@ -175,6 +175,105 @@
       }
     });
 
+    // Task form functionality
+    function toggleTaskForm() {
+      const taskForm = document.getElementById("task_form");
+      const taskText = document.getElementById("task_text");
+      
+      taskForm.classList.toggle("active");
+      taskText.classList.toggle("active");
+    }
+
+    // Task management
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+    function addTask(event) {
+      event.preventDefault();
+      
+      const taskName = document.getElementById("taskName").value;
+      const subject = document.getElementById("subject").value;
+      const priority = document.getElementById("priority").value;
+      const percentage = document.getElementById("percentage").value;
+      
+      const newTask = {
+        id: Date.now(),
+        name: taskName,
+        subject: subject,
+        priority: priority,
+        percentage: percentage,
+        completed: false
+      };
+      
+      tasks.push(newTask);
+      saveTasks();
+      renderTasks();
+      
+      // Reset form
+      document.getElementById("task_form").reset();
+      toggleTaskForm();
+    }
+
+    function deleteTask(id) {
+      tasks = tasks.filter(task => task.id !== id);
+      saveTasks();
+      renderTasks();
+    }
+
+    function toggleComplete(id) {
+      tasks = tasks.map(task => {
+        if (task.id === id) {
+          task.completed = !task.completed;
+          task.percentage = task.completed ? 100 : 0;
+        }
+        return task;
+      });
+      saveTasks();
+      renderTasks();
+    }
+
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      const taskList = document.getElementById("task_list");
+      taskList.innerHTML = '';
+      
+      if (tasks.length === 0) {
+        taskList.innerHTML = '<p>No tasks yet. Add your first task!</p>';
+        return;
+      }
+      
+      tasks.forEach(task => {
+        const taskItem = document.createElement("div");
+        taskItem.className = `task_item ${task.priority.toLowerCase()}`;
+        
+        taskItem.innerHTML = `
+          <div class="task_info">
+            <div class="task_name">${task.name}</div>
+            <div class="task_subject">${task.subject}</div>
+          </div>
+          <div class="task_details">
+            <span class="task_priority ${task.priority.toLowerCase()}">${task.priority}</span>
+            <div class="task_progress">
+              <div class="progress_bar">
+                <div class="progress_fill" style="width: ${task.percentage}%"></div>
+              </div>
+              <span>${task.percentage}%</span>
+            </div>
+          </div>
+          <div class="task_actions">
+            <button class="complete_btn" onclick="toggleComplete(${task.id})">
+              ${task.completed ? 'Undo' : 'Complete'}
+            </button>
+            <button class="delete_btn" onclick="deleteTask(${task.id})">Delete</button>
+          </div>
+        `;
+        
+        taskList.appendChild(taskItem);
+      });
+    }
+
     // Initialize theme based on user preference
     function initTheme() {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -184,7 +283,11 @@
     }
 
     // Run initialization when DOM is loaded
-    document.addEventListener('DOMContentLoaded', initTheme);
+    document.addEventListener('DOMContentLoaded', function() {
+      initTheme();
+      renderTasks();
+    });
   </script>
 </body>
+</html>
 </html>
