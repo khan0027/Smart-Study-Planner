@@ -95,7 +95,8 @@
     }
 
     #menu ul li a:hover {
-      background: var(--border);
+      background: var(--gradient);
+      color: var(--bg-dark);
     }
 
     /* Theme Toggle */
@@ -461,20 +462,20 @@
       color: white;
     }
 
-    .signup-link {
+    .log-in-link {
       margin-top: 20px;
       font-size: 0.9rem;
       color: var(--text-muted);
     }
 
-    .signup-link a {
+    .log-in-link a{
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
     }
 
-    .signup-link a:hover {
-      text-decoration: underline;
+    .log-in-link a:hover {
+      text-decoration: none;
     }
 
     /* Responsive Design */

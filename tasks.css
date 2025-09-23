@@ -15,6 +15,12 @@
       --high-priority: hsl(0, 100%, 50%);
       --moderate-priority: hsl(39, 100%, 50%);
       --low-priority: hsl(120, 100%, 35%);
+      --primary: hsl(220, 90%, 56%);
+      --primary-light: hsl(220, 90%, 66%);
+      --primary-dark: hsl(220, 90%, 46%);
+      --accent: hsl(320, 90%, 65%);
+      --success: hsl(120, 60%, 50%);
+      --gradient: linear-gradient(135deg, var(--primary), var(--accent));
     }
 
     body.light {
@@ -29,6 +35,11 @@
       --high-priority: hsl(0, 100%, 45%);
       --moderate-priority: hsl(39, 100%, 40%);
       --low-priority: hsl(120, 100%, 30%);
+      --primary: hsl(220, 90%, 56%);
+      --primary-light: hsl(220, 90%, 66%);
+      --primary-dark: hsl(220, 90%, 46%);
+      --accent: hsl(320, 90%, 65%);
+      --success: hsl(120, 60%, 50%);
     }
 
     body {
@@ -66,6 +77,10 @@
       font-size: 1.2rem;
       letter-spacing: 2px;
       font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     /* Menu */
@@ -105,10 +120,15 @@
       border-radius: 50%;
       height: 25px;
       width: 25px;
-      background: var(--border);
+      background: var(--gradient);
       display: flex;
       justify-content: center;
       align-items: center;
+
+    }
+    #theme_toggle:hover{
+      transform: translateY(-2px);
+      transition-duration: 400ms;
     }
 
     #light_img, #dark_img {
@@ -146,7 +166,10 @@
     }
 
     #login_btn:hover, #signup_btn:hover {
-      background: var(--border);
+      background: var(--primary);
+      transform: translateY(-2px);
+      transition-duration: 400ms;
+      color: var(--bg-dark);
     }
 
     /* Sidebar */

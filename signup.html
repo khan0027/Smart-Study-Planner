@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Study Planner</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="signup.css">
 </head>
 <body id="container">
   <!-- TOP NAV -->
@@ -86,15 +86,16 @@
         <input type="text" name="username" id="username" placeholder="Enter your username" required>
       </div>
       <div class="label">
+        <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="label">
         <label for="password"><i class="fas fa-lock"></i> Password</label>
         <input type="password" name="password" id="password" placeholder="Enter your password" required>
       </div>
-      <div class="form-footer">
-        <div class="remember-me">
-          <input type="checkbox" id="remember">
-          <label for="remember">Remember me</label>
-        </div>
-        <a href="#" class="forgot-password">Forgot password?</a>
+      <div class="label">
+        <label for="confirm-password"><i class="fas fa-lock"></i> Confirm Password</label>
+        <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="Confirm your password" required>
       </div>
       <button type="submit" id="submit_btn">
         <i class="fas fa-sign-in-alt"></i> Login
@@ -110,8 +111,8 @@
           <i class="fab fa-twitter"></i>
         </div>
       </div>
-      <div class="signup-link">
-        Don't have an account? <a href="signup.html">Sign up here</a>
+      <div class="log-in-link">
+        Already have an account? <a href="login.html">Login here</a>
       </div>
     </form>
   </main>

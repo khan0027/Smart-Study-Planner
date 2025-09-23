@@ -95,7 +95,8 @@
     }
 
     #menu ul li a:hover {
-      background: var(--border);
+      background: var(--gradient);
+      color: var(--bg-dark);
     }
 
     /* Theme Toggle */
