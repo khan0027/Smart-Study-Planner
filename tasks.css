@@ -99,7 +99,8 @@
     }
 
     #menu ul li a:hover {
-      background: var(--border);
+      background: var(--gradient);
+      color: var(--bg-dark);
     }
 
     /* Theme Toggle */
@@ -269,16 +270,23 @@
     }
     
     #task_span {
-      color: var(--span-text);
       letter-spacing: 1.5px;
       font-weight: bold;
       animation: bounce 2s infinite;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     
     #task_desc {
       width: 50%;
       padding-left: 10%;
       gap: 20px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     
     #task_action {
@@ -302,6 +310,7 @@
       height: 10vh;
       border-radius: 5px;
       cursor: pointer;
+      
     }
     
     #task_text:hover {
@@ -358,6 +367,7 @@
       background: var(--bg-dark);
       border: 1px solid var(--border);
       color: var(--text);
+      border-radius: 5px;
     }
     
     #task_form input::placeholder {
